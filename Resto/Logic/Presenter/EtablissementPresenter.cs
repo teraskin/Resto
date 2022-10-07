@@ -39,7 +39,6 @@ namespace Resto.Logic.Presenter
             etabModel.CompteTresor = ietablissement.CompteTresor;
         }
 
-        // دالة الادخال
         public bool EtabInsert()
         {
             connectBetweenModelInterface();

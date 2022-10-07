@@ -87,5 +87,9 @@ namespace Resto.Logic.Services
            
 
         }
+        public static DataTable getAllData()
+        {
+            return DBHelper.getData("ETABLISSEMENTGETALL", () => { });
+        }
     }
 }

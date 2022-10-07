@@ -31,6 +31,7 @@ namespace Resto.Views.Forms
         public string Telephone { get => Convert.ToString(txtNumTel.Text); set => txtNumTel.Text = value.ToString(); }
         public string CCP { get => Convert.ToString(txtCcp.Text); set => txtCcp.Text = value.ToString(); }
         public string CompteTresor { get => Convert.ToString(txtCompteTresore.Text); set => txtCompteTresore.Text = value.ToString(); }
+        public object dataGridView { get => Dgv.DataSource; set => Dgv.DataSource = value; }
 
         public Frm_Etablissemnt()
         {
@@ -90,6 +91,24 @@ namespace Resto.Views.Forms
         private void btnNew_Click(object sender, EventArgs e)
         {
             etabPresenter.ClearFields();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteAll_Click(object sender, EventArgs e)
+        {
+            bool check = etabPresenter.EtabDeleteAll();
+            if (check)
+            {
+                MessageBox.Show("تم حدف الكل بنجاح");
+            }
+            else
+            {
+                MessageBox.Show("فشل في عملية الحدف");
+            }
         }
     }
 }

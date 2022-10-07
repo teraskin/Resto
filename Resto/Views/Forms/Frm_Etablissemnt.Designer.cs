@@ -57,7 +57,7 @@ namespace Resto.Views.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgv = new System.Windows.Forms.DataGridView();
+            this.Dgv = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnFrist = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrevious = new DevExpress.XtraEditors.SimpleButton();
@@ -71,7 +71,7 @@ namespace Resto.Views.Forms
             this.btnNew = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -358,13 +358,13 @@ namespace Resto.Views.Forms
             this.label1.TabIndex = 3;
             this.label1.Text = "رقم المؤسسة";
             // 
-            // dgv
+            // Dgv
             // 
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(32, 516);
-            this.dgv.Name = "dgv";
-            this.dgv.Size = new System.Drawing.Size(705, 204);
-            this.dgv.TabIndex = 5;
+            this.Dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv.Location = new System.Drawing.Point(32, 516);
+            this.Dgv.Name = "Dgv";
+            this.Dgv.Size = new System.Drawing.Size(705, 204);
+            this.Dgv.TabIndex = 5;
             // 
             // groupBox2
             // 
@@ -434,6 +434,7 @@ namespace Resto.Views.Forms
             this.btnDeleteAll.Size = new System.Drawing.Size(104, 39);
             this.btnDeleteAll.TabIndex = 8;
             this.btnDeleteAll.Text = "مسح الكل";
+            this.btnDeleteAll.Click += new System.EventHandler(this.btnDeleteAll_Click);
             // 
             // btnDelete
             // 
@@ -463,6 +464,7 @@ namespace Resto.Views.Forms
             this.btnSave.Size = new System.Drawing.Size(104, 39);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "حفظ";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnNew
             // 
@@ -490,7 +492,7 @@ namespace Resto.Views.Forms
             this.ClientSize = new System.Drawing.Size(749, 732);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.dgv);
+            this.Controls.Add(this.Dgv);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -502,7 +504,7 @@ namespace Resto.Views.Forms
             this.Load += new System.EventHandler(this.Frm_Etablissemnt_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -512,7 +514,7 @@ namespace Resto.Views.Forms
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.DataGridView Dgv;
         private System.Windows.Forms.GroupBox groupBox2;
         private DevExpress.XtraEditors.SimpleButton btnFrist;
         private DevExpress.XtraEditors.SimpleButton btnPrevious;

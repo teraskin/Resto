@@ -21,5 +21,6 @@ namespace Resto.Views.Interface
          string Telephone { get; set; }
          string CCP { get; set; }
          string CompteTresor { get; set; }
+         object dataGridView { get; set; }
     }
 }

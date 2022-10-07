@@ -15,5 +15,6 @@ namespace Resto.Views.Interface
          string NumFiscal { get; set; }
          string Adresse { get; set; }
          string Telephone { get; set; }
+         object dataGridView { get; set; }
     }
 }

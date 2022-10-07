@@ -52,5 +52,44 @@ namespace Resto.Logic.Services
 
             return false;
         }
+        // THIS METHOUD TO GET DATA
+        public static DataTable getData(string spName, Action methoud)
+        {
+            DataTable tbl = new DataTable();
+            SqlDataAdapter da;
+            // premierement recupere l'adresse
+            using (SqlConnection connection = getConnectionString())
+            {
+                try
+                {
+                    command = new SqlCommand(spName, connection);
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    methoud.Invoke();
+
+                    connection.Open();
+                    
+                    da = new SqlDataAdapter(command);
+                    da.Fill(tbl);
+                    da.Dispose();
+                    connection.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    connection.Close();
+                    Console.WriteLine(ex.Message);
+
+
+                }
+                finally
+                {
+                    connection.Close();
+
+                }
+            }
+            return tbl;
+
+        }
     }
 }
