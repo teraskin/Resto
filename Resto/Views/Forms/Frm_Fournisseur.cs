@@ -31,19 +31,36 @@ namespace Resto.Views.Forms
         public string Adresse { get => Convert.ToString(txtAdress.Text); set => txtAdress.Text = value.ToString(); }
         public string Telephone { get => Convert.ToString(txtTelephone.Text); set => txtTelephone.Text = value.ToString(); }
         public object dataGridView { get => Dgv.DataSource; set => Dgv.DataSource = value; }
+        int IFournisseur.row { get => row; set => row = value; }
+        object IFournisseur.btnNew { get => btnNew.Enabled; set => btnNew.Enabled = Convert.ToBoolean(value); }
+        object IFournisseur.btnAdd { get => btnAdd.Enabled; set => btnAdd.Enabled = Convert.ToBoolean(value); }
+        object IFournisseur.btnSave { get => btnSave.Enabled; set => btnSave.Enabled = Convert.ToBoolean(value); }
+        object IFournisseur.btnDelete { get => btnDelete.Enabled; set => btnDelete.Enabled = Convert.ToBoolean(value); }
+        object IFournisseur.btnDeleteAll { get => btnDeleteAll.Enabled; set => btnDeleteAll.Enabled = Convert.ToBoolean(value); }
+
+        int row = 0;
 
         private void Frm_Fournisseur_Load(object sender, EventArgs e)
         {
-
+            fourniPresenter.getAllData();
+            fourniPresenter.AutoNumber();
         }
 
         private void btnNew_Click(object sender, EventArgs e)
         {
             fourniPresenter.ClearFields();
+            fourniPresenter.AutoNumber();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (txtNomFour.Text == "" || txtActivite.Text == "" || txtNumRegistre.Text == "" || txtNumFiscal.Text == "" ||
+                txtAdress.Text == "" || txtTelephone.Text == "")
+            {
+                MessageBox.Show("من فظلك المعلومات الناقصة", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             bool check = fourniPresenter.FournisseurInsert();
             if (check)
             {
@@ -57,15 +74,7 @@ namespace Resto.Views.Forms
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            bool check = fourniPresenter.FournisseurUpdate();
-            if (check)
-            {
-                MessageBox.Show("تم التعديل بنجاح");
-            }
-            else
-            {
-                MessageBox.Show("فشل في عمليةالتعديل");
-            }
+            
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -91,6 +100,82 @@ namespace Resto.Views.Forms
             else
             {
                 MessageBox.Show("فشل في عملية الحدف");
+            }
+        }
+
+        private void btnFrist_Click(object sender, EventArgs e)
+        {
+            row = 0;
+            fourniPresenter.getRow(row);
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            int countRow = Convert.ToInt32(fourniPresenter.getLastRow().Rows[0][0]) - 1;
+            if (row == 0)
+            {
+                row = countRow;
+            }
+            else
+            {
+                row = row - 1;
+            }
+
+            fourniPresenter.getRow(row);
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int countRow = Convert.ToInt32(fourniPresenter.getLastRow().Rows[0][0]);
+                if (countRow == row)
+                {
+                    row = 0;
+                }
+                else
+                {
+                    row = row + 1;
+                }
+                fourniPresenter.getRow(row);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnLast_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int countRow = Convert.ToInt32(fourniPresenter.getLastRow().Rows[0][0]) - 1;
+                row = countRow;
+                fourniPresenter.getRow(row);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (txtNomFour.Text == "" || txtActivite.Text == "" || txtNumRegistre.Text == "" || txtNumFiscal.Text == "" ||
+                txtAdress.Text == "" || txtTelephone.Text == "")
+            {
+                MessageBox.Show("من فظلك المعلومات الناقصة", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            bool check = fourniPresenter.FournisseurUpdate();
+            if (check)
+            {
+                MessageBox.Show("تم التعديل بنجاح");
+            }
+            else
+            {
+                MessageBox.Show("فشل في عمليةالتعديل");
             }
         }
     }

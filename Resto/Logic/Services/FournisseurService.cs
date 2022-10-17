@@ -73,10 +73,21 @@ namespace Resto.Logic.Services
 
 
         }
-
-        public static DataTable getAllData()
+        // دالة select
+        static public DataTable getAllData()
         {
             return DBHelper.getData("FOURNISSEURGETALL", () => { });
         }
+        // method get all data to get last row in table
+        static public DataTable getLastRow()
+        {
+            return DBHelper.getData("FOURNISSEURGETLASTROW", () => { });
+        }
+        // method get all data to get max id in table
+        static public DataTable getMaxID()
+        {
+            return DBHelper.getData("FOURNISSEURMAXID", () => { });
+        }
+
     }
 }

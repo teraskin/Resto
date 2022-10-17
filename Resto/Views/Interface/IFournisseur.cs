@@ -16,5 +16,12 @@ namespace Resto.Views.Interface
          string Adresse { get; set; }
          string Telephone { get; set; }
          object dataGridView { get; set; }
+         int row { get; set; }
+        // نعمل كل الازرار المراد التحكم بها  على شكل اوبجي
+        object btnNew { get; set; }
+        object btnAdd { get; set; }
+        object btnSave { get; set; }
+        object btnDelete { get; set; }
+        object btnDeleteAll { get; set; }
     }
 }

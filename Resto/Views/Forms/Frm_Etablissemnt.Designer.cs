@@ -57,7 +57,6 @@ namespace Resto.Views.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Dgv = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnFrist = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrevious = new DevExpress.XtraEditors.SimpleButton();
@@ -66,14 +65,14 @@ namespace Resto.Views.Forms
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnDeleteAll = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
-            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnNew = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.Dgv = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -344,6 +343,7 @@ namespace Resto.Views.Forms
             this.txtID.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.Location = new System.Drawing.Point(350, 28);
             this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(232, 30);
             this.txtID.TabIndex = 4;
             // 
@@ -357,14 +357,6 @@ namespace Resto.Views.Forms
             this.label1.Size = new System.Drawing.Size(124, 23);
             this.label1.TabIndex = 3;
             this.label1.Text = "رقم المؤسسة";
-            // 
-            // Dgv
-            // 
-            this.Dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgv.Location = new System.Drawing.Point(32, 516);
-            this.Dgv.Name = "Dgv";
-            this.Dgv.Size = new System.Drawing.Size(705, 204);
-            this.Dgv.TabIndex = 5;
             // 
             // groupBox2
             // 
@@ -386,6 +378,7 @@ namespace Resto.Views.Forms
             this.btnFrist.Name = "btnFrist";
             this.btnFrist.Size = new System.Drawing.Size(38, 39);
             this.btnFrist.TabIndex = 3;
+            this.btnFrist.Click += new System.EventHandler(this.btnFrist_Click);
             // 
             // btnPrevious
             // 
@@ -394,6 +387,7 @@ namespace Resto.Views.Forms
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(38, 39);
             this.btnPrevious.TabIndex = 2;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // btnLast
             // 
@@ -402,6 +396,7 @@ namespace Resto.Views.Forms
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(38, 39);
             this.btnLast.TabIndex = 1;
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // btnNext
             // 
@@ -410,12 +405,12 @@ namespace Resto.Views.Forms
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(38, 39);
             this.btnNext.TabIndex = 0;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnDeleteAll);
             this.groupBox3.Controls.Add(this.btnDelete);
-            this.groupBox3.Controls.Add(this.btnEdit);
             this.groupBox3.Controls.Add(this.btnSave);
             this.groupBox3.Controls.Add(this.btnNew);
             this.groupBox3.Controls.Add(this.btnAdd);
@@ -429,7 +424,7 @@ namespace Resto.Views.Forms
             // btnDeleteAll
             // 
             this.btnDeleteAll.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteAll.ImageOptions.Image")));
-            this.btnDeleteAll.Location = new System.Drawing.Point(10, 24);
+            this.btnDeleteAll.Location = new System.Drawing.Point(47, 24);
             this.btnDeleteAll.Name = "btnDeleteAll";
             this.btnDeleteAll.Size = new System.Drawing.Size(104, 39);
             this.btnDeleteAll.TabIndex = 8;
@@ -439,27 +434,17 @@ namespace Resto.Views.Forms
             // btnDelete
             // 
             this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(120, 24);
+            this.btnDelete.Location = new System.Drawing.Point(157, 24);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(104, 39);
             this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "مسح";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btnEdit
-            // 
-            this.btnEdit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.ImageOptions.Image")));
-            this.btnEdit.Location = new System.Drawing.Point(230, 24);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(104, 39);
-            this.btnEdit.TabIndex = 6;
-            this.btnEdit.Text = "تعديل";
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
             // btnSave
             // 
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(340, 24);
+            this.btnSave.Location = new System.Drawing.Point(268, 24);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(104, 39);
             this.btnSave.TabIndex = 5;
@@ -469,7 +454,7 @@ namespace Resto.Views.Forms
             // btnNew
             // 
             this.btnNew.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNew.ImageOptions.Image")));
-            this.btnNew.Location = new System.Drawing.Point(560, 24);
+            this.btnNew.Location = new System.Drawing.Point(488, 24);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(104, 39);
             this.btnNew.TabIndex = 4;
@@ -479,17 +464,32 @@ namespace Resto.Views.Forms
             // btnAdd
             // 
             this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(450, 24);
+            this.btnAdd.Location = new System.Drawing.Point(378, 24);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(104, 39);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "إضافة";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // Dgv
+            // 
+            this.Dgv.AllowUserToAddRows = false;
+            this.Dgv.AllowUserToDeleteRows = false;
+            this.Dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.Dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv.Location = new System.Drawing.Point(12, 516);
+            this.Dgv.Name = "Dgv";
+            this.Dgv.ReadOnly = true;
+            this.Dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Dgv.Size = new System.Drawing.Size(842, 204);
+            this.Dgv.TabIndex = 5;
+            this.Dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_CellContentClick);
+            // 
             // Frm_Etablissemnt
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(749, 732);
+            this.ClientSize = new System.Drawing.Size(866, 747);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.Dgv);
@@ -504,9 +504,9 @@ namespace Resto.Views.Forms
             this.Load += new System.EventHandler(this.Frm_Etablissemnt_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -514,7 +514,6 @@ namespace Resto.Views.Forms
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView Dgv;
         private System.Windows.Forms.GroupBox groupBox2;
         private DevExpress.XtraEditors.SimpleButton btnFrist;
         private DevExpress.XtraEditors.SimpleButton btnPrevious;
@@ -523,7 +522,6 @@ namespace Resto.Views.Forms
         private System.Windows.Forms.GroupBox groupBox3;
         private DevExpress.XtraEditors.SimpleButton btnDeleteAll;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
-        private DevExpress.XtraEditors.SimpleButton btnEdit;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.SimpleButton btnNew;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
@@ -553,5 +551,6 @@ namespace Resto.Views.Forms
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtCcp;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridView Dgv;
     }
 }

@@ -30,5 +30,42 @@ namespace Resto.Views.Forms
             Frm_Fournisseur frm = new Frm_Fournisseur();
             frm.ShowDialog();
         }
+
+        private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Frm_Category frm = new Frm_Category();
+            frm.ShowDialog();
+        }
+
+        private void barButtonItem6_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Frm_Produit frm = new Frm_Produit();
+            frm.ShowDialog();
+        }
+
+        private void barButtonItem8_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Frm_Repas frm = new Frm_Repas();
+            frm.ShowDialog();
+        }
+
+        private void barButtonItem9_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Frm_Menu frm = new Frm_Menu();
+            frm.ShowDialog();
+        }
+
+        private void barButtonItem10_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Frm_User frm = new Frm_User();
+            frm.ShowDialog();
+        }
+
+        private void barButtonItem13_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Frm_Plat frm = new Frm_Plat();
+            frm.ShowDialog();
+
+        }
     }
 }

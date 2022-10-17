@@ -87,9 +87,19 @@ namespace Resto.Logic.Services
            
 
         }
-        public static DataTable getAllData()
+        static public DataTable getAllData()
         {
             return DBHelper.getData("ETABLISSEMENTGETALL", () => { });
+        }
+        // method get all data to get last row in table
+        static public DataTable getLastRow()
+        {
+            return DBHelper.getData("ETABLISSEMENTGETLASTROW", () => { });
+        }
+        // method get all data to get max id in table
+        static public DataTable getMaxID()
+        {
+            return DBHelper.getData("ETABLISSEMENTMAXID", () => { });
         }
     }
 }

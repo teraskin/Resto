@@ -33,12 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Data.Desktop.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Data.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Printing.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Utils.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraBars.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraEditors.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v21.1, Version=21.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v21.1, Version=21.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v21.1.Core, Version=21.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v21.1, Version=21.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v21.1, Version=21.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v21.1, Version=21.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,20 +52,74 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logic\Presenter\PlatPresenter.cs" />
     <Compile Include="Logic\Presenter\EtablissementPresenter.cs" />
+    <Compile Include="Logic\Presenter\CategoryPresenter.cs" />
+    <Compile Include="Logic\Presenter\UserPresenter.cs" />
+    <Compile Include="Logic\Presenter\MenuPresenter.cs" />
     <Compile Include="Logic\Presenter\FournisseurPresenter.cs" />
+    <Compile Include="Logic\Presenter\ProduitPresenter.cs" />
+    <Compile Include="Logic\Presenter\RepasPresenter.cs" />
+    <Compile Include="Logic\Services\PlatService.cs" />
     <Compile Include="Logic\Services\DBHelper.cs" />
     <Compile Include="Logic\Services\EtablissementService.cs" />
+    <Compile Include="Logic\Services\CategoryService.cs" />
+    <Compile Include="Logic\Services\UserService.cs" />
+    <Compile Include="Logic\Services\MenuService.cs" />
+    <Compile Include="Logic\Services\RepasService.cs" />
+    <Compile Include="Logic\Services\ProduitService.cs" />
     <Compile Include="Logic\Services\FournisseurService.cs" />
+    <Compile Include="Models\PlatModel.cs" />
     <Compile Include="Models\EtablissementModel.cs" />
+    <Compile Include="Models\CategoryModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\MenuModel.cs" />
+    <Compile Include="Models\RepasModel.cs" />
+    <Compile Include="Models\ProduitModel.cs" />
     <Compile Include="Models\FournisseurModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Forms\Frm_Plat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Frm_Plat.Designer.cs">
+      <DependentUpon>Frm_Plat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\Frm_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Frm_Menu.Designer.cs">
+      <DependentUpon>Frm_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\Frm_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Frm_User.Designer.cs">
+      <DependentUpon>Frm_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\Frm_Repas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Frm_Repas.Designer.cs">
+      <DependentUpon>Frm_Repas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Forms\Frm_Etablissemnt.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Forms\Frm_Etablissemnt.Designer.cs">
       <DependentUpon>Frm_Etablissemnt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\Frm_Category.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Frm_Category.Designer.cs">
+      <DependentUpon>Frm_Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\Frm_Produit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Frm_Produit.Designer.cs">
+      <DependentUpon>Frm_Produit.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Forms\Frm_Fournisseur.cs">
       <SubType>Form</SubType>
@@ -79,7 +133,13 @@
     <Compile Include="Views\Forms\Frm_Main.Designer.cs">
       <DependentUpon>Frm_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Interface\IPlat.cs" />
     <Compile Include="Views\Interface\IEtablissement.cs" />
+    <Compile Include="Views\Interface\ICategory.cs" />
+    <Compile Include="Views\Interface\IUser.cs" />
+    <Compile Include="Views\Interface\IMenu.cs" />
+    <Compile Include="Views\Interface\IRepas.cs" />
+    <Compile Include="Views\Interface\IProduit.cs" />
     <Compile Include="Views\Interface\IFournisseur.cs" />
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -91,8 +151,26 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Forms\Frm_Plat.resx">
+      <DependentUpon>Frm_Plat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Frm_Menu.resx">
+      <DependentUpon>Frm_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Frm_User.resx">
+      <DependentUpon>Frm_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Frm_Repas.resx">
+      <DependentUpon>Frm_Repas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Frm_Etablissemnt.resx">
       <DependentUpon>Frm_Etablissemnt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Frm_Category.resx">
+      <DependentUpon>Frm_Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Frm_Produit.resx">
+      <DependentUpon>Frm_Produit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Frm_Fournisseur.resx">
       <DependentUpon>Frm_Fournisseur.cs</DependentUpon>
